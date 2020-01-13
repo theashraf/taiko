@@ -1,5 +1,3 @@
-const { descEvent } = require('../../lib/helper');
-
 let {
   openBrowser,
   goto,
@@ -25,15 +23,6 @@ const test_name = 'tableCell';
 
 describe(test_name, () => {
   let filePath;
-
-  let validateEmitterEvent = function(event, expectedText) {
-    return new Promise(resolve => {
-      descEvent.once(event, eventData => {
-        expect(eventData).to.be.equal(expectedText);
-        resolve();
-      });
-    });
-  };
 
   before(async () => {
     let innerHtml = `
